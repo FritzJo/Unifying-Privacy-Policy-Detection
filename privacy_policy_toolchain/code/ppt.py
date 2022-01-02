@@ -871,12 +871,11 @@ def policy_detection_module():
         list_of_dict_keyphrases = keyphrase_analyzer(list_of_lists_of_keyphrases)
 
         if list_of_TextIDs == 0:
+            print("No data for language", language)
+        else:
             label_comparison(
                 language, list_of_dict_keyphrases, list_of_TextIDs, list_of_URLs
             )
-        else: 
-            print("No data for language", language)
-
 
     db.close()
     print("End time: ", str(datetime.datetime.now()))

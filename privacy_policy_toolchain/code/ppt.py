@@ -150,11 +150,6 @@ def load_keyphrases(db, language):
         list_of_keyphrases = (
             keyphrase_dict["MultiRake"]
             + keyphrase_dict["YakeOriginal"]
-            + keyphrase_dict["PKE_TextRank"]
-            + keyphrase_dict["PKE_SingleRank"]
-            + keyphrase_dict["PKE_TopicRank"]
-            + keyphrase_dict["PKE_PositionRank"]
-            + keyphrase_dict["PKE_MultipartiteRank"]
             + keyphrase_dict["Textacy_sCAKE"]
         )
         list_of_lists_of_keyphrases.append(list_of_keyphrases)
@@ -721,8 +716,7 @@ def keyphrase_extraction_module():
 
     keyphrase_extractors = {
         "MultiRake": multi_rake,
-        "YakeOriginal": yake_original,
-        "PKE_TextRank": pke_textrank,
+        "YakeOriginal": yake_original,#"PKE_TextRank": pke_textrank,
         "PKE_SingleRank": pke_singlerank,
         "PKE_TopicRank": pke_topicrank,
         "PKE_PositionRank": pke_positionrank,
@@ -732,13 +726,6 @@ def keyphrase_extraction_module():
 
     groups_of_algorithms = {
         "misc": ["MultiRake", "YakeOriginal"],
-        "pke": [
-            "PKE_TextRank",
-            "PKE_SingleRank",
-            "PKE_TopicRank",
-            "PKE_PositionRank",
-            "PKE_MultipartiteRank",
-        ],
         "textacy": ["Textacy_sCAKE"],
     }
 
